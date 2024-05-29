@@ -47,16 +47,16 @@ var GitDemonstrationView = ContainedBase.extend({
     var convert = function(markdowns) {
       return marked(markdowns.join('\n'));
     };
-
+    
     this.JSON.beforeHTML = convert(this.JSON.beforeMarkdowns);
     this.JSON.afterHTML = convert(this.JSON.afterMarkdowns);
-
+    
     this.container = new ModalTerminal({
       title: options.title || intl.str('git-demonstration-title')
     });
     this.render();
     this.checkScroll();
-
+    
     this.navEvents = Object.assign({}, Backbone.Events);
     this.navEvents.on('positive', this.positive, this);
     this.navEvents.on('negative', this.negative, this);
@@ -70,10 +70,10 @@ var GitDemonstrationView = ContainedBase.extend({
       },
       wait: true
     });
-
+    
     this.visFinished = false;
     this.initVis();
-
+    
     if (!options.wait) {
       this.show();
     }
@@ -175,7 +175,7 @@ var GitDemonstrationView = ContainedBase.extend({
 
     var chainDeferred = Q.defer();
     var chainPromise = chainDeferred.promise;
-
+    
     commands.forEach(function(command, index) {
       chainPromise = chainPromise.then(function() {
         var myDefer = Q.defer();
@@ -186,11 +186,11 @@ var GitDemonstrationView = ContainedBase.extend({
         return Q.delay(300);
       });
     }, this);
-
+    
     chainPromise = chainPromise.then(function() {
       whenDone.resolve();
     });
-
+    
     chainDeferred.resolve();
   },
 
@@ -252,3 +252,5 @@ var GitDemonstrationView = ContainedBase.extend({
 });
 
 exports.GitDemonstrationView = GitDemonstrationView;
+
+jsaskdasdkla
