@@ -251,6 +251,4 @@ var GitDemonstrationView = ContainedBase.extend({
   }
 });
 
-exports.GitDemonstrationView = GitDemonstrationView;
-
-jsaskdasdkla
+exports.GitDemonstrationView = GitDemonstrationView
